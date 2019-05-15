@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app-vue">
+        <h1>v-for 循环</h1>
+        <ul>
+            <li v-for="key in charactars">
+                {{key}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(user,index) in users">
+                {{index+1}}
+                <span>{{user.name}}</span>
+                <span>{{user.age}}</span>
+            </li>
+        </ul>
+        <template v-for="(user,index) in users">
+            <h3>{{index+1}}.{{user.name}}</h3>
+            <p>Age - {{user.age}}</p>
+        </template>
+        <template v-for="(user,index) in users">
+            <div v-for="(key,val) in user">
+                {{key}} - {{val}}
+            </div>
+        </template>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app-vue',
+        data:{
+            charactars:['Mario','Luffy','Yoshi'],
+            users:[
+                {name:'Henry',age:30},
+                {name:'Bucky',age:25},
+                {name:'Emily',age:18}
+            ]
+        }
+    })
+</script>
+</html>
