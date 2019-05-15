@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>初始化多个vue实列对象</h1>
+    <div id="app-vue-one">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+    </div>
+    <div id="app-vue-two">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+        <button v-on:click="changeTitle">change App Title</button>
+    </div>
+</body>
+<script>
+    var one = new Vue({
+        el:'#app-vue-one',
+        data:{
+            title:'app one的内容'
+        },
+        methods:{
+
+        },
+        computed:{
+            greet:function () {
+                return 'Helle App One'
+            }
+        }
+    })
+    var two = new Vue({
+        el:'#app-vue-two',
+        data:{
+            title:'app two的内容'
+        },
+        methods:{
+            changeTitle:function () {
+                one.title = '已经改名了'
+            }
+        },
+        computed:{
+            greet:function () {
+                return 'Helle App Two'
+            }
+        }
+    })
+</script>
+</html>
