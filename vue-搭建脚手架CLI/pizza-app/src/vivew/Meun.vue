@@ -1,7 +1,5 @@
 <template>
-    <div id="Meun">
-      <h1>Meun</h1>
-    </div>
+    <h1>Meun</h1>
 </template>
 
 <script>
@@ -10,6 +8,6 @@
     }
 </script>
 
-<style>
+<style scoped>
 
 </style>
