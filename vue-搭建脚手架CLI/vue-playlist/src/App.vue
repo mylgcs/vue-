@@ -1,28 +1,31 @@
+<!--1.模板：html结构-->
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    hello vue
+    <h1>{{title}}</h1>
+    <users/>
   </div>
 </template>
-
+<!--2.行为：处理逻辑-->
 <script>
-import HelloWorld from './components/HelloWorld'
+  //局部注册组件
+import Users from './components/Users'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      title:'这是我的第一个vue脚手架项目'
+    }
+  },
+  components:{
+    'users':Users
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<!--3.样式：解决样式-->
+<style scoped>
+h1{
+  color: purple;
 }
 </style>
