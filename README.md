@@ -1,1 +1,1 @@
-# vue小白入门课程  webpack-simple
+# Vue2.x全家桶实战点餐系统(axios/fetch/vuex/router/导航守卫)
